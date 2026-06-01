@@ -1,0 +1,245 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f7f8fb;
+  color: #1e1e2f;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #ffffff 0%, #eef2ff 100%);
+}
+
+.app-shell {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.6rem;
+  letter-spacing: -0.04em;
+}
+
+p {
+  margin: 12px 0 0;
+  line-height: 1.6;
+  color: #4f4f6a;
+}
+
+.start-panel,
+.quiz-panel {
+  background: white;
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 20px 60px rgba(28, 33, 76, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.platform-picker {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.platform-picker label {
+  font-weight: 600;
+  color: #35364d;
+}
+
+.platform-picker select {
+  width: 100%;
+  max-width: 320px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid #d7d9ec;
+  background: #fafbff;
+  font-size: 1rem;
+  color: #1e1e2f;
+}
+
+.platform-description {
+  margin: 0;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 220px;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 14px;
+  background: #4f46e5;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+
+.primary-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 32px rgba(79, 70, 229, 0.18);
+}
+
+.question-card {
+  margin-top: 18px;
+  padding: 20px;
+  border-radius: 18px;
+  background: #eef2ff;
+}
+
+.question-text {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.progress-text {
+  margin: 6px 0 0;
+  color: #6b7280;
+}
+
+.platform-badge {
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #3730a3;
+  font-size: 0.95rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.options-grid {
+  display: grid;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.option-button {
+  width: 100%;
+  text-align: left;
+  padding: 16px 18px;
+  border: 1px solid #d7d9ec;
+  border-radius: 16px;
+  background: white;
+  color: #1e1e2f;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.option-button:hover,
+.option-button.selected {
+  border-color: #4f46e5;
+  background: #eef2ff;
+}
+
+.option-button.selected {
+  color: #3730a3;
+}
+
+.option-button.correct-answer {
+  border-color: #16a34a;
+  background: #dcfce7;
+  color: #14532d;
+}
+
+.option-button.wrong-answer {
+  border-color: #dc2626;
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.confetti-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 24px;
+  border-radius: 4px;
+  opacity: 0.95;
+  animation: confetti-fall 1.2s ease-out forwards, confetti-spin 1.2s linear forwards;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-10px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(250px) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@keyframes confetti-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.feedback-message {
+  margin: 24px 0 16px;
+  padding: 18px 20px;
+  border-radius: 18px;
+  font-weight: 600;
+}
+
+.feedback-message.correct {
+  background: #ecfdf5;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.feedback-message.wrong {
+  background: #fef2f2;
+  color: #9f1239;
+  border: 1px solid #fca5a5;
+}
+
+.summary-card {
+  margin-top: 18px;
+  padding: 24px;
+  border-radius: 20px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+}
+
+.summary-title {
+  margin: 0 0 12px;
+  font-size: 1.3rem;
+}
+
+.summary-text {
+  margin: 0 0 22px;
+  font-size: 1rem;
+  color: #4b5563;
+}
